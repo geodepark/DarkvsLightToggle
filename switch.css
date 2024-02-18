@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.3s ease-in;
+}
+
+#mode-toggle{
+    position: absolute;
+    left: -9999px;
+}
+
+.container {
+    width: 900px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: opacity 0.5s ease-in;
+}
+
+.light{
+    background-image: url('../practice/Images/Day 1.png');
+    /*width: 1082px;
+    height: 350px; */
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+.dark{
+    background-image: url('../practice/Images/Dark11.png');
+   /* width: 1082px;
+    height: 350px; */
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+.ball{
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    top: 2px;
+    left: 0px;
+    transition: transform 0.5s ease-in;
+}
+#mode-toggle:checked ~ .container .light{
+    opacity: 0;
+}
+#mode-toggle:checked ~ .container .dark{
+    opacity: 1;
+}
+#mode-toggle:checked ~ .container .ball{
+    transform: translateX(820px);
+}
